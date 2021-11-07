@@ -49,3 +49,31 @@ func numberInPow(number: inout Int, pow: Int) {
 numberInPow(number: &number, pow:4)
 number
 
+
+//MARK: - task three palindrome
+// не самое аккуратное решение, но как есть
+
+let str: String = "А роза упала на лапу Азора"
+
+func polindromString(word: String) -> Bool {
+    var copyWord: [String] = []
+    
+    word.forEach(){
+        copyWord.append($0.lowercased())
+    }
+    
+    copyWord.reverse()
+    
+    for (index, value) in word.enumerated(){
+        
+        let str: String = String(value)
+        if  str.lowercased() != copyWord[index]{
+            return false
+        } else {
+            return true
+        }
+    }
+    return true
+}
+
+polindromString(word: str)
