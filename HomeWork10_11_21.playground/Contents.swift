@@ -15,7 +15,6 @@ func isPrimeNumber(number: Int) -> Bool {
     return true
 }
 
-
 //MARK: - solution
 func multiplicities(number: Int, divider: Int = 2) {
     
@@ -31,7 +30,22 @@ func multiplicities(number: Int, divider: Int = 2) {
         let buferD = divider
         multiplicities(number: number,divider: buferD + 1)
     }
-
 }
 
 multiplicities(number: 54)
+
+//MARK: - task task second
+
+var number = 2
+
+func numberInPow(number: inout Int, pow: Int) {
+    var temp = 1
+    for _ in 1...pow {
+       temp *= number
+    }
+    number = temp
+}
+
+numberInPow(number: &number, pow:4)
+number
+
